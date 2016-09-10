@@ -1,3 +1,9 @@
 [submodule "data"]
 	path = data
 	url = git@github.com:ericxyan/ericxyan.github.io.git
+[submodule "data/data/hexo"]
+	path = data/data/hexo
+	url = git@github.com:ericxyan/ericxyan.github.io
+[submodule "data/hexo"]
+	path = data/hexo
+	url = git@github.com:ericxyan/ericxyan.github.io
