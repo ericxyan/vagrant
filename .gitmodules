@@ -7,3 +7,6 @@
 [submodule "data/hexo"]
 	path = data/hexo
 	url = git@github.com:ericxyan/ericxyan.github.io
+[submodule "data/a1"]
+	path = data/a1
+	url = https://gitlab.com/csc469/a1.git
