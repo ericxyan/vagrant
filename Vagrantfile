@@ -22,7 +22,12 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # Jenkins Dashboard
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  # Kibana
+  config.vm.network "forwarded_port", guest: 5601, host: 5601
+  # Elasticsearch
+  config.vm.network "forwarded_port", guest: 9200, host: 9200
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -37,7 +42,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "../", "/repos"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -47,9 +52,9 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = false 
     vb.name = "myVM"
-    vb.cpus = 1
+    vb.cpus = 2
     # Customize the amount of memory on the VM:
-    vb.memory = "1024"
+    vb.memory = "2048"
   end
   #
   # View the documentation for the provider you are using for more
